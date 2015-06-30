@@ -2,7 +2,7 @@
 
 use Illuminate\Session\Store;
 
-use Eius\Notifications\SessionStore;
+// use Eius\Notifications\SessionStore;
 
 class LaravelSessionStore implements SessionStore {
 

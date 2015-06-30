@@ -1,5 +1,7 @@
 <?php namespace Eius\Notifications\Notification;
 
+use Eius\Notifications\Store\SessionStore;
+
 class Notification
 {
 

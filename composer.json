@@ -20,7 +20,11 @@
   "autoload": {
     "psr-4": {
       "Eius\\Notifications\\": "src/"
-    }
+    },
+    "files": [
+        "src/Notification/functions.php"
+    ]
+
   },
   "minimum-stability": "dev"
 }
