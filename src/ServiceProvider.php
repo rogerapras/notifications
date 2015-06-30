@@ -64,12 +64,12 @@ class ServiceProvider extends LaravelServiceProvider {
 
     private function handleTranslations() {
 
-        $this->loadTranslationsFrom('notifications', __DIR__.'/../lang');
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'notifications');
     }
 
     private function handleViews() {
 
-        $this->loadViewsFrom('notifications', __DIR__.'/../views', 'notifications');
+        $this->loadViewsFrom(__DIR__.'/../views', 'notifications');
 
         $this->publishes([__DIR__.'/../views' => base_path('resources/views/vendor/notifications')]);
     }
