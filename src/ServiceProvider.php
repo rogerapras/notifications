@@ -69,7 +69,7 @@ class ServiceProvider extends LaravelServiceProvider {
 
     private function handleViews() {
 
-        $this->loadViewsFrom('notifications', __DIR__.'/../views');
+        $this->loadViewsFrom('notifications', __DIR__.'/../views', 'notifications');
 
         $this->publishes([__DIR__.'/../views' => base_path('resources/views/vendor/notifications')]);
     }
