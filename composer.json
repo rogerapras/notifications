@@ -1,13 +1,12 @@
 {
-  "name": "vendor/package",
+  "name": "eius/notifications",
   "description": "",
-  "keywords": [],
-  "homepage": "",
+  "keywords": ["notifications"],
   "license": "MIT",
   "authors": [
     {
-      "name": "",
-      "email": ""
+      "name": "Eius",
+      "email": "eius_ras@hotmail.com"
     }
   ],
   "require": {
@@ -20,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Vendor\\Package\\": "src/"
+      "Eius\\Notifications\\": "src/"
     }
   },
   "minimum-stability": "dev"

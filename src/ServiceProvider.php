@@ -1,4 +1,4 @@
-<?php namespace Vendor\Package;
+<?php namespace Eius\Notifications;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
@@ -20,7 +20,7 @@ class ServiceProvider extends LaravelServiceProvider {
 
         $this->handleConfigs();
         // $this->handleMigrations();
-        // $this->handleViews();
+        $this->handleViews();
         // $this->handleTranslations();
         // $this->handleRoutes();
     }
@@ -34,6 +34,13 @@ class ServiceProvider extends LaravelServiceProvider {
 
         // Bind any implementations.
 
+        $this->app->bind(
+            'Eius\Notifications\Store\SessionStore',
+            'Eius\Notifications\Store\LaravelSessionStore'
+        );
+        $this->app->bindShared('notifications', function () {
+            return $this->app->make('Eius\Notifications\Notification\Notification');
+        });
     }
 
     /**
@@ -48,23 +55,23 @@ class ServiceProvider extends LaravelServiceProvider {
 
     private function handleConfigs() {
 
-        $configPath = __DIR__ . '/../config/packagename.php';
+        $configPath = __DIR__ . '/../config/notifications.php';
 
-        $this->publishes([$configPath => config_path('packagename.php')]);
+        $this->publishes([$configPath => config_path('notifications.php')]);
 
-        $this->mergeConfigFrom($configPath, 'packagename');
+        $this->mergeConfigFrom($configPath, 'notifications');
     }
 
     private function handleTranslations() {
 
-        $this->loadTranslationsFrom('packagename', __DIR__.'/../lang');
+        $this->loadTranslationsFrom('notifications', __DIR__.'/../lang');
     }
 
     private function handleViews() {
 
-        $this->loadViewsFrom('packagename', __DIR__.'/../views');
+        $this->loadViewsFrom('notifications', __DIR__.'/../views');
 
-        $this->publishes([__DIR__.'/../views' => base_path('resources/views/vendor/packagename')]);
+        $this->publishes([__DIR__.'/../views' => base_path('resources/views/vendor/notifications')]);
     }
 
     private function handleMigrations() {

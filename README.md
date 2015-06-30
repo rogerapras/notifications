@@ -1,3 +1,7 @@
+# notifications
+Lavavel Notifications
+
+
 # Boilerplate Laravel 5 Package
 
 ## Installation
@@ -76,3 +80,5 @@ Finally, edit this `README.md` file and replace it with a description of your ow
 Commit everything to your (newly initialized) git repo, and push it wherever you'll keep your package (Github, etc.).
 
 Enjoy coding!
+=======
+
